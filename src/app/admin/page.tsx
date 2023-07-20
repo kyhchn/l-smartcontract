@@ -174,7 +174,7 @@ export default function AdminPage() {
     }
     return (
         <div className="container mx-auto p-8">
-            <h1 className="text-center text-2xl font-bold mb-8">Panel Admin nih bozz, bukan admin?? gabakal bisa dehh..</h1>
+            <h1 className="text-center text-2xl font-bold mb-8">Panel Admin nich</h1>
             <div className="mb-8 flex flex-row justify-between">
                 <div>
                     <input

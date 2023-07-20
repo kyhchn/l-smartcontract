@@ -105,6 +105,7 @@ export default function AdminPage() {
         if (provider != null) {
           const signer = await provider.getSigner();
           const abi = vote.abi;
+          console.log(signer)
           const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
           const res = new ethers.Contract(contractAddress, abi as unknown as InterfaceAbi, signer);
           fetchCandidates(res);
@@ -186,7 +187,11 @@ export default function AdminPage() {
   return (
     <div className='py-10'>
       <h1 className='text-center text-5xl font-bold text-white'>Pemilu Anti Ragu</h1>
-
+      {!votingStarted && !votingEnded && !votingResult && (
+        <div className='text-center py-5 text-2xl'>
+          Masih belum mulai ya
+        </div>
+      )}
       {votingStarted && votingEnded == null && (
         <div className='px-5'>
           <h1 className='text-center font-semibold text-3xl my-3'>Ayo buruan voting jangan golput :D</h1>
